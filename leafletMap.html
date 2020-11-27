@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Map </title>  
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+   
+    <!-- link for bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <h3 class="navbar-brand text-light" >Covid 19 Map</h3>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!--<ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0 ">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search countries" aria-label="Search">
+                  <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </li>
+              
+          </ul>-->
+        </div>
+        
+          
+      </nav> 
+    <!--  <div class="card-header">
+        <h2 class="mx-auto text-white"> Covid-19 Map</h2>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>-->
+
+    
+     
+
+    <div class=" mt-2 container"> 
+      
+      
+        <h5 class="text-center text-white" id="statistics">statistics </h5>
+      
+      <div class="row bg-dark text-white">
+        <div class="  col  ">
+           <p class="text-center" > Total Confirmed Cases </p>
+           <h2  class="text-danger text-center" id="confirmed">confirmed</h2>
+        </div>
+
+        <div class=" col order-12">
+          <p class="text-center"> Deaths </p>
+          <h2 class="text-center  text-danger" id="deaths">deaths</h2>
+        </div>
+        <div class=" col order-12">
+          <p class="text-center"> Total Recovered </p>
+           <h2 class="text-center text-danger" id="recovered">recovered</h2>
+        </div>
+      </div>
+
+    </div>
+
+
+      <div class= "mt-3">
+        <div id="button-holder" class="ml-3 ">
+        <button style="background-color:black !important" class="bg-dark text-danger" onclick="worldmapFunction()">World Map</button>
+        <button  style="background-color:black !important" class="bg-dark text-danger" onclick="usamapFunction()">USA Map</button>
+
+        
+       
+        <button  style="background-color:black !important" class="bg-dark text-danger float-right mr-0 " id="mapInfo" onclick="mapInfo()">Map Legend</button>
+
+
+        <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1 class="text-dark">Map Information  </h1>
+    <h4> You can click on colors on the map to view statistics at a Location</h4>
+    <p> <span class="text-danger"> Red</span> represents areas with more than 5000 confirmed cases</p>
+    <p>  <span class="text-warning"> Yellow</span> represents areas where confirmed cases are between 1000 and 5000  </p>
+    <p> <span class="text-primary"> Blue</span> represents areas where confirmed cases are between 500 and 1000  </p>
+    <p>  <span class="text-success"> Green</span>  represents areas where confirmed cases are less than 500 </p>
+  </div>
+
+</div>
+      </div>
+
+        <div class="ml-3 mb-3 " id="worldmap" ></div>
+      <div class="ml-3 mb-3"  id="usamap"></div>
+      </div>
+      
+
+     
+
+
+      
+      <script src="app.js">
+  
+      </script>
+
+
+</body>
+
+
+
+
+</html>
